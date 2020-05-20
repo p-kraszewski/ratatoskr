@@ -12,5 +12,6 @@
 *.out
 
 /ratatoskr
+/ratatosk.toml
 
 /.idea/

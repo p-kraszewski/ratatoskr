@@ -5,6 +5,7 @@ import (
 	"sync"
 
 	"github.com/p-kraszewski/ratatoskr/config"
+	"github.com/p-kraszewski/ratatoskr/logger"
 )
 
 type ErrorMap map[Task]error
@@ -56,14 +57,17 @@ func (app *App) Wait() ErrorMap {
 	return app.errors
 }
 
-func (em ErrorMap) String() string {
-	ans := ""
+func (em ErrorMap) Log() int {
+	errc := 0
+	log := logger.Get()
+
 	for task, err := range em {
 		if err == nil {
-			ans += task.String() + ": no error\n"
+			log.Infof("Task %s ended without error", task.String())
 		} else {
-			ans += task.String() + ": error " + err.Error() + "\n"
+			log.Errorf("Task %s failed with %s", task.String(), err.Error())
+			errc++
 		}
 	}
-	return ans
+	return errc
 }
