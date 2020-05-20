@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	confFile = flag.StringP("config", "c", "ratatosk.toml", "Configuration file")
+	confFile = flag.StringP("config", "c", "ratatoskr.toml", "Configuration file")
 	logLevel = flag.IntP("verbosity", "V", 2, "Log verbosity (0=critical to 5=debug)")
 	doSysLog = flag.BoolP("syslog", "s", false, "Log to syslog")
 	writeCfg = flag.BoolP("writecfg", "w", false, "(Re)write config)")
