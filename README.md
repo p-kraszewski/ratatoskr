@@ -1,9 +1,9 @@
-# [ratatoskr](https://en.wikipedia.org/wiki/Ratatoskr)
+# Ratatoskr
 
-Ratatoskr is (well, eventually *will be*) a mesh routing protocol with the following features:
+[Ratatoskr](https://en.wikipedia.org/wiki/Ratatoskr) is (well, eventually *will be*) a mesh routing protocol with the following features:
 
 - Transport protected by WireGuard
-- True peer-to-peer with no supervisory nodes (you need to connect to one node to be introduced to the rest of the network).
+- True peer-to-peer with no supervisory nodes (you need to connect to one node to be introduced to the rest of the network plus your ID must be approved by administrator and not blacklisted).
 - Automatic node discovery
 - Nodes addressed in mesh via a private [RFC4193](https://tools.ietf.org/html/rfc4193) IPv6 network.
 - Route setup via link-state protocol (topology yet to be decided, probobly hierarchical mesh based on seniority/link speed/being behind NAT)
